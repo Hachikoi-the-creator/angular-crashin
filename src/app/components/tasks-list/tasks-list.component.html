@@ -1,1 +1,6 @@
-<p>tasks-list works!</p>
+<main class="task-list">
+  <!-- basic for in Angular -->
+  <!-- <p *ngFor="let task of tasksList">{{ task.text }}</p> -->
+
+  <app-task *ngFor="let task of tasksList" [task]="task"></app-task>
+</main>

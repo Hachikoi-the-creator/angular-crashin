@@ -1,0 +1,17 @@
+.task-item {
+  --spacing: 0.5rem;
+
+  padding: var(--spacing);
+  border: 1px solid plum;
+  border-radius: 1rem;
+  position: relative;
+  min-width: 300px;
+
+  svg {
+    fill: rgb(255, 58, 58);
+    position: absolute;
+    right: var(--spacing);
+    top: var(--spacing);
+    width: 2rem;
+  }
+}
