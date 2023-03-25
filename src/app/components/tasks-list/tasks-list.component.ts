@@ -14,6 +14,16 @@ export class TasksListComponent implements OnInit {
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.tasksList = this.taskService.getAllTasks();
+    // this.tasksList = this.taskService.getAllTasks()
+
+    // now the value will automatically change everytime the observable changes
+    this.taskService
+      .getAllTasks()
+      .subscribe((taskArr) => (this.tasksList = taskArr));
+  }
+
+  // -1 since the ids start in 1
+  removeTask(id: number) {
+    this.tasksList.splice(id - 1, 1);
   }
 }
