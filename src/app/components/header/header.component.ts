@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,19 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   title: string = 'Task Tracker UwU';
+  showAddTask: boolean = false;
+  // im sure this will have a value & no idea how to give it a default one lol
+  subscription!: Subscription;
+
+  constructor(private uiService: UiService) {
+    // link local toggle w/ service's
+    this.subscription = uiService.onToggle().subscribe((_prev) => {
+      // this.showAddTask = _prev, doesn't work new update
+      this.showAddTask = !this.showAddTask;
+    });
+  }
 
   toggleAddTask() {
-    console.log('toggle stuff');
+    this.uiService.toggleAddTask();
   }
 }

@@ -1,4 +1,4 @@
-<form class="form flex-col" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddTask" class="form flex-col" (ngSubmit)="onSubmit()">
   <div class="input-container flex-col">
     <label for="text">Description</label>
     <!-- 2 way data binding (first add the forms module to app.modules) -->
