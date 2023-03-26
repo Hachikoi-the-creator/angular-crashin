@@ -1,12 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  --blue: #1bbbff;
+  --light-green: #acadff;
+  --white: #f3ffbd;
+  --red: #ff1654;
+  --green: #4dff5b;
+  --accent: #81ffea;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
-  background-color: #232323;
+  // background-color: #232323;
   color: white;
 }
 
 body {
+  background-color: var(--light-green);
   font-family: sans-serif;
 }
 
@@ -14,4 +24,8 @@ h1,
 h2,
 h3 {
   text-align: center;
+}
+
+button {
+  border: 1px solid var(--red);
 }

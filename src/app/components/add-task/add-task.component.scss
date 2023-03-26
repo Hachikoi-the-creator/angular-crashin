@@ -12,6 +12,10 @@
   // border: 1px solid salmon;
   gap: 0.5rem;
 
+  * {
+    color: black;
+  }
+
   input,
   .submit-btn {
     border-radius: 7px;
@@ -19,7 +23,7 @@
 
   input {
     padding: 0.3rem;
-    background-color: grey;
+    background-color: var(--accent);
   }
 
   .check,
@@ -32,8 +36,8 @@
   }
 
   .submit-btn {
-    background-color: transparentize($color: greenyellow, $amount: 0.2);
-    padding: 0.8rem 1.6rem;
-    color: black;
+    background-color: var(--green);
+    padding: 0.5rem 1.3rem;
+    border: 1px solid yellowgreen;
   }
 }

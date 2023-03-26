@@ -11,8 +11,6 @@ export class UiService {
   constructor() {}
 
   toggleAddTask(): void {
-    console.log('attempt', this.showAddTask);
-
     this.showAddTask = !this.showAddTask;
     // ??? tf bruv
     this.subject.next(this.showAddTask);

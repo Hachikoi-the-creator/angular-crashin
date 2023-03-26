@@ -1,0 +1,17 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  > * {
+    text-align: center;
+  }
+
+  &-link {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    text-decoration: underline gainsboro;
+    cursor: pointer;
+  }
+}

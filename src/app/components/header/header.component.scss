@@ -1,6 +1,17 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0.5rem;
+  gap: 1rem;
+
+  h1 {
+    color: black;
+  }
+
+  @media (min-width: 600px) {
+    gap: 5rem;
+    flex-wrap: nowrap;
+  }
 }

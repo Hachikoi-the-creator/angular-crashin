@@ -1,13 +1,13 @@
 .task-item {
   --spacing: 0.5rem;
-  --bg-color: #383838;
 
   &,
   * {
-    background-color: var(--bg-color);
+    background-color: var(--blue);
   }
 
   > * {
+    color: black;
     margin: 5px 0;
   }
 
@@ -37,11 +37,10 @@
   }
 
   svg {
-    fill: rgb(255, 58, 58);
-    // width: 100%;
+    fill: var(--red);
   }
 }
 
 .reminder {
-  border-left: 6px greenyellow groove;
+  border-left: 6px var(--red) groove;
 }

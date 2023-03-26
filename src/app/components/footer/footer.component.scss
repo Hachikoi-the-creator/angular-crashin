@@ -1,0 +1,45 @@
+.footer {
+  margin-top: 3rem;
+  padding: 0 10%;
+
+  > * {
+    color: black;
+  }
+
+  h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .link,
+  .link p {
+    color: var(--red);
+  }
+
+  .link {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link,
+  svg {
+    width: 2rem;
+  }
+
+  svg {
+    position: absolute;
+    top: 3ch;
+    left: 0;
+  }
+}
