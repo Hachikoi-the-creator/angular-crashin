@@ -5,13 +5,15 @@
 
   > * {
     text-align: center;
+    color: black;
   }
 
-  &-link {
+  .about-link {
     margin: 0 auto;
     display: block;
     width: fit-content;
-    text-decoration: underline gainsboro;
+    text-decoration: underline;
     cursor: pointer;
+    color: var(--red);
   }
 }

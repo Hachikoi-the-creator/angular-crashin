@@ -2,6 +2,13 @@
   margin-top: 3rem;
   padding: 0 10%;
 
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
   > * {
     color: black;
   }

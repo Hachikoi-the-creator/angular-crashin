@@ -1,6 +1,7 @@
 <header class="header">
   <h1>{{ title }}</h1>
   <app-button
+    *ngIf="isInRoute('/')"
     bgColor="{{ showAddTask ? '#ff1654' : '#4dff5b' }}"
     color="black"
     text="{{ showAddTask ? 'Close' : 'Open' }}"

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
 
@@ -13,7 +14,7 @@ export class HeaderComponent {
   // im sure this will have a value & no idea how to give it a default one lol
   subscription!: Subscription;
 
-  constructor(private uiService: UiService) {
+  constructor(private uiService: UiService, private router: Router) {
     // link local toggle w/ service's
     this.subscription = uiService.onToggle().subscribe((_prev) => {
       // this.showAddTask = _prev, doesn't work new update
@@ -23,5 +24,9 @@ export class HeaderComponent {
 
   toggleAddTask() {
     this.uiService.toggleAddTask();
+  }
+
+  isInRoute(route: string) {
+    return this.router.url === route;
   }
 }
