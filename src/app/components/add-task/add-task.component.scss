@@ -1,0 +1,39 @@
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  // border: 1px solid salmon;
+  gap: 0.5rem;
+
+  input,
+  .submit-btn {
+    border-radius: 7px;
+  }
+
+  input {
+    padding: 0.3rem;
+    background-color: grey;
+  }
+
+  .check,
+  .submit-btn {
+    cursor: pointer;
+  }
+
+  .check {
+    transform: scale(1.3);
+  }
+
+  .submit-btn {
+    background-color: transparentize($color: greenyellow, $amount: 0.2);
+    padding: 0.8rem 1.6rem;
+    color: black;
+  }
+}

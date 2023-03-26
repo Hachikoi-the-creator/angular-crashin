@@ -1,4 +1,6 @@
 <main class="task-list">
+  <!-- <app-add-task (onAddTask)="addNewTask(task)"></app-add-task> WONTT WORK THUS BELLOW -->
+  <app-add-task (onAddTask)="addNewTask($event)"></app-add-task>
   <!-- basic for in Angular -->
   <!-- <p *ngFor="let task of tasksList">{{ task.text }}</p> -->
 

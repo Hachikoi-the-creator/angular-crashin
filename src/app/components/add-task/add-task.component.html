@@ -1,0 +1,37 @@
+<form class="form flex-col" (ngSubmit)="onSubmit()">
+  <div class="input-container flex-col">
+    <label for="text">Description</label>
+    <!-- 2 way data binding (first add the forms module to app.modules) -->
+    <input
+      type="text"
+      name="text"
+      [(ngModel)]="text"
+      id="text"
+      placeholder="Enter text"
+    />
+  </div>
+
+  <div class="input-container flex-col">
+    <label for="day-time">Day</label>
+    <input
+      type="text"
+      name="day"
+      [(ngModel)]="day"
+      id="day"
+      placeholder="Enter a date string - May 3rd 2019"
+    />
+  </div>
+
+  <div class="input-container flex-row">
+    <label for="reminder">Remind me</label>
+    <input
+      class="check"
+      type="checkbox"
+      name="reminder"
+      [(ngModel)]="reminder"
+      id="reminder"
+    />
+  </div>
+  <!-- {{ text }} -->
+  <button class="submit-btn">Add Task</button>
+</form>

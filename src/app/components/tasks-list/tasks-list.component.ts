@@ -23,7 +23,9 @@ export class TasksListComponent implements OnInit {
 
   // -1 since the ids start in 1
   removeTask(id: number) {
-    if (id === -1) return console.error("That's an incorrect id fellow human~");
+    console.log('id is', id);
+
+    if (id < 0) return console.error("That's an incorrect id fellow human~");
     // console.log('deleting from parent', id);
     this.taskService.removeOneTask(id).subscribe(() => {
       // update UI
@@ -43,6 +45,14 @@ export class TasksListComponent implements OnInit {
           task.reminder = !taskObj.reminder;
         }
       });
+    });
+  }
+
+  addNewTask(taskObj: Omit<Task, 'id'>) {
+    this.taskService.addTask(taskObj).subscribe((createdTask) => {
+      console.log('Added new task', createdTask);
+      // update UI
+      this.tasksList.push(createdTask);
     });
   }
 }

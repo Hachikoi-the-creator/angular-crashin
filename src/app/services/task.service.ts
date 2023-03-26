@@ -37,7 +37,10 @@ export class TaskService {
     return this.ngFetch.put<Task>(url, updatedTask);
   }
 
-  // addTask(id: number, newTask: Omit<Task, 'id'>): Observable<Task> {
-  //   return this.ngFetch.post<Task>(this.BASE_URL, newTask);
-  // }
+  addTask(newTask: Omit<Task, 'id'>): Observable<Task> {
+    const brandNew = this.ngFetch.post<Task>(this.BASE_URL, newTask);
+    console.log(brandNew);
+
+    return brandNew;
+  }
 }
