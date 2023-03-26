@@ -24,11 +24,25 @@ export class TasksListComponent implements OnInit {
   // -1 since the ids start in 1
   removeTask(id: number) {
     if (id === -1) return console.error("That's an incorrect id fellow human~");
-    console.log('deleting from parent', id);
+    // console.log('deleting from parent', id);
     this.taskService.removeOneTask(id).subscribe(() => {
       // update UI
       const taskIndex = this.tasksList.findIndex((e) => e.id === id);
       this.tasksList.splice(taskIndex, 1);
+    });
+  }
+
+  updateReminderStatus(taskObj: Task) {
+    if (taskObj.id === -1)
+      return console.error("That's an incorrect id fellow human~ upt");
+    // console.log('updaeting from parent');
+    this.taskService.updateReminderStatus(taskObj).subscribe(() => {
+      // update UI
+      this.tasksList.forEach((task) => {
+        if (task.id === taskObj.id) {
+          task.reminder = !taskObj.reminder;
+        }
+      });
     });
   }
 }

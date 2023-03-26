@@ -3,9 +3,11 @@
   <!-- <p *ngFor="let task of tasksList">{{ task.text }}</p> -->
 
   <!-- I can directly use task.id since I'm using the ngFor thus I have the task available -->
+  <!-- (func) must be the same the child.ts emits -->
   <app-task
     *ngFor="let task of tasksList"
     [task]="task"
     (onDeleteTask)="removeTask(task.id || -1)"
+    (onUpdateReminder)="updateReminderStatus(task)"
   ></app-task>
 </main>

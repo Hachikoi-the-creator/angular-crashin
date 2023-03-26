@@ -1,5 +1,6 @@
-<article class="task-item">
-  <button (click)="onDelete(task.id || -1)">
+<!-- conditional to add class if "task.reminder" truthy -->
+<article [ngClass]="{ reminder: task.reminder }" class="task-item">
+  <button class="btn delete-btn" (click)="onDelete(task.id || -1)">
     <svg
       fill="currentColor"
       viewBox="0 0 32 32"
@@ -13,5 +14,6 @@
   </button>
   <p>{{ task.text }}</p>
   <p>{{ task.day }}</p>
-  <p>{{ task.reminder }}</p>
+  <!-- if task.reminder -->
+  <button class="btn remind-btn" (click)="onUpdate(task)">Remind-upt</button>
 </article>

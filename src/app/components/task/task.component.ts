@@ -7,18 +7,21 @@ import { Task } from 'src/app/Task';
   styleUrls: ['./task.component.scss'],
 })
 export class TaskComponent {
+  // @Input() task!: Task; - tell ts that I'm condifent this will have a value at runtime, no likey
   @Input() task: Task = {
     text: '',
     day: '',
     reminder: false,
   };
-  // type of the param to emit to the parent
-  // @Output() onDeleteTask:EventEmitter<Task> = new EventEmitter()
+  // < T >type of the param to emit to the parent
   @Output() onDeleteTask: EventEmitter<number> = new EventEmitter();
-
-  // @Input() task!: Task; - tell ts that I'm condifent this will have a value at runtime, no likey
+  @Output() onUpdateReminder: EventEmitter<Task> = new EventEmitter();
 
   onDelete(id: number) {
     this.onDeleteTask.emit(id);
+  }
+
+  onUpdate(task: Task) {
+    this.onUpdateReminder.emit(task);
   }
 }

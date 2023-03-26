@@ -24,16 +24,20 @@ export class TaskService {
 
   removeOneTask(id: number): Observable<Task> {
     const url = `${this.BASE_URL}/${id}`;
-    console.log('url', url);
 
     return this.ngFetch.delete<Task>(url);
   }
 
-  // addTask(text: string, day: string, reminder: boolean): Task {
-  //   const rndId = Math.round(Math.random() * 100);
-  //   const newTask: Task = { text, day, reminder, id: rndId };
+  updateReminderStatus(taskData: Task): Observable<Task> {
+    const url = `${this.BASE_URL}/${taskData.id}`;
 
-  //   TASK.push(newTask);
-  //   return newTask;
+    const updatedTask = { ...taskData, reminder: !taskData.reminder };
+
+    // why return? because that's how my API works
+    return this.ngFetch.put<Task>(url, updatedTask);
+  }
+
+  // addTask(id: number, newTask: Omit<Task, 'id'>): Observable<Task> {
+  //   return this.ngFetch.post<Task>(this.BASE_URL, newTask);
   // }
 }
