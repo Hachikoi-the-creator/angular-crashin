@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from 'src/app/Task';
 
 @Component({
@@ -12,5 +12,13 @@ export class TaskComponent {
     day: '',
     reminder: false,
   };
+  // type of the param to emit to the parent
+  // @Output() onDeleteTask:EventEmitter<Task> = new EventEmitter()
+  @Output() onDeleteTask: EventEmitter<number> = new EventEmitter();
+
   // @Input() task!: Task; - tell ts that I'm condifent this will have a value at runtime, no likey
+
+  onDelete(id: number) {
+    this.onDeleteTask.emit(id);
+  }
 }

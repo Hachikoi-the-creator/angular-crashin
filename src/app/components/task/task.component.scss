@@ -7,11 +7,17 @@
   position: relative;
   min-width: 300px;
 
-  svg {
-    fill: rgb(255, 58, 58);
+  button {
     position: absolute;
     right: var(--spacing);
     top: var(--spacing);
-    width: 2rem;
+    width: 3rem;
+    background: transparent;
+    border-radius: 1rem;
+  }
+
+  svg {
+    fill: rgb(255, 58, 58);
+    // width: 100%;
   }
 }

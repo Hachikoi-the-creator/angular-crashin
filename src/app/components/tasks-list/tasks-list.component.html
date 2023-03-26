@@ -2,5 +2,10 @@
   <!-- basic for in Angular -->
   <!-- <p *ngFor="let task of tasksList">{{ task.text }}</p> -->
 
-  <app-task *ngFor="let task of tasksList" [task]="task"></app-task>
+  <!-- I can directly use task.id since I'm using the ngFor thus I have the task available -->
+  <app-task
+    *ngFor="let task of tasksList"
+    [task]="task"
+    (onDeleteTask)="removeTask(task.id || -1)"
+  ></app-task>
 </main>
