@@ -7,8 +7,8 @@ import { Task } from '../Task';
   providedIn: 'root',
 })
 export class TaskService {
-  // private BASE_URL = 'https://crashing-together.onrender.com/angular';
-  private BASE_URL = 'http://localhost:1313/angular';
+  private BASE_URL = 'https://crashing-together.onrender.com/angular';
+
   constructor(private ngFetch: HttpClient) {}
 
   getAllTasks(): Observable<Task[]> {
